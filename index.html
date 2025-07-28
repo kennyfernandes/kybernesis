@@ -8,12 +8,12 @@
     background-color: black;
     color: #00ff00;
     font-family: monospace;
-    padding: 2rem;
+    padding: 1.2rem;
     white-space: pre-wrap;
-    font-size: 16px;
+    font-size: 36px;       /* MUITO maior */
+    line-height: 1.8;      /* Proporcional */
     max-width: 960px;
     margin: 0 auto;
-    line-height: 1.5;
   }
 
   #terminal {
@@ -23,34 +23,13 @@
 
   .cursor {
     display: inline-block;
-    width: 10px;
+    width: 18px;
     background-color: #00ff00;
     animation: blink 1s step-start 0s infinite;
   }
 
   @keyframes blink {
     50% { background-color: transparent; }
-  }
-
-  /* RESPONSIVO PARA CELULAR */
-  @media (max-width: 768px) {
-    body {
-      font-size: 20px;
-      line-height: 1.7;
-      padding: 1.5rem 1rem;
-    }
-
-    .cursor {
-      width: 12px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    body {
-      font-size: 22px;
-      line-height: 1.8;
-      padding: 1.5rem 0.8rem;
-    }
   }
 </style>
 </head>
