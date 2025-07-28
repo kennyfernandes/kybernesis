@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Projeto IA e Estética</title>
-    <style>
-      body {
-        <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Projeto IA e Estética</title>
-    <style>
-      body {
-        background-color: black;
-        color: #00ff00;
-        font-family: monospace;
-        white-space: pre-wrap;
-        padding: 2rem;
-        max-width: 800px;
-        margin: 0 auto;
+<head>
+  <meta charset="UTF-8" />
+  <title>Projeto IA e Estética</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      padding: 2rem;
+      white-space: pre-wrap;
+      font-size: 14px;
+    }
+    #terminal {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #00ff00;
+      animation: blink 1s step-start 0s infinite;
+    }
+    @keyframes blink {
+      50% { background-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+  <div class="cursor" id="cursor"></div>
+
+  <script>
+    const texto = `
+PROJETO DE CURSO — INTELIGÊNCIA ARTIFICIAL, ESTÉTICA E FUTURO
+--------------------------------------------------------------
+
+Resumo:
+Curso online autoral, modular e interdisciplinar, combinando teoria crítica, técnica prática, estética visual e narrativa. O conteúdo é pensado para ser independente e rizomático, com foco em inteligência artificial, mídia virtual e cultura digital — misturando minicursos, vídeo-ensaios e material didático de apoio.
+
+Público-alvo:
+Pessoas com formação ou interesse avançado em arte, tecnologia, filosofia, design, comunicação, machine learning e áreas correlatas. Não é pensado para o público leigo geral — mas para quem já procura profundidade conceitual e técnica.
+
+Formato dos módulos:
+As aulas terão formatos variados — alguns em estilo vlog, outros como documentário narrativo. Haverá módulos teóricos (ex: Baudrillard, cibernética, ética da IA) e módulos práticos (ex: ComfyUI, LoRA, pointclouds, pipelines de geração). Cada módulo será independente, mas interligado a outros por referências cruzadas — uma navegação em rede, não linear.
+
+Interface e estética:
+A identidade visual será toda inspirada em terminais antigos estilo MS-DOS (fundo preto, tipografia verde, estrutura monoespaçada), com responsividade total para mobile. A interface do site simulará um terminal onde os módulos e comandos serão acessados como se estivéssemos navegando por um sistema.
+
+Infraestrutura:
+- Front-end: React com Tailwind (ou similar)
+- Frameworks possíveis: Next.js, Astro
+- Hospedagem: Vercel ou Netlify
+- Estilo visual: terminal hacker / retro CLI
+- Deploy leve e estático para MVP
+- Backend: nenhuma necessidade no início
+- Possível integração futura com Firebase Auth ou LMS open source
+
+Funcionalidades principais no MVP:
+- Página inicial com prompt de entrada (simulando terminal)
+- Listagem dos módulos com títulos e descrições resumidas
+- Links para vídeos (Vimeo/YouTube não listado)
+- Estilo visual consistente com a proposta hacker/retro
+- Site leve, acessível e 100% mobile-ready
+- Possível versão PT/EN (ou legendas nos vídeos)
+
+Funções extras (futuro):
+- Captura de e-mails
+- Sistema de acesso por token/manual
+- Área de comunidade (fórum leve ou Discord)
+- Progresso ou trilhas customizadas (se fizer sentido)
+
+Objetivo:
+Construir uma plataforma autoral e diferenciada — estética, funcional e conceitualmente — para apresentar o curso como uma obra em si, articulando arte, código, teoria e técnica.
+
+Equipe:
+- UX/UI: Mauro
+- Frontend: Aldry
+- Conteúdo, roteiro e direção: [Seu nome]
+`;
+
+    let i = 0;
+    const speed = 10; // menor = mais rápido
+    const terminal = document.getElementById("terminal");
+
+    function typeWriter() {
+      if (i < texto.length) {
+        terminal.innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        document.getElementById("cursor").style.display = "none";
       }
-      h1 {
-        color: #00ff00;
-      }
-      hr {
-        border: 0;
-        border-top: 1px solid #00ff00;
-        margin: 1.5rem 0;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>PROJETO DE CURSO — INTELIGÊNCIA ARTIFICIAL, ESTÉTICA E FUTURO</h1>
-    <hr />
-    <strong>Resumo:</strong><br />
-    Curso online autoral, modular e interdisciplinar, combinando teoria crítica, técnica prática, estética visual e narrativa. O conteúdo é pensado para ser independente e rizomático, com foco em inteligência artificial, mídia virtual e cultura digital — misturando minicursos, vídeo-ensaios e material didático de apoio.
+    }
 
-    <br /><br />
-    <strong>Público-alvo:</strong><br />
-    Pessoas com formação ou interesse avançado em arte, tecnologia, filosofia, design, comunicação, machine learning e áreas correlatas. Não é pensado para o público leigo geral — mas para quem já procura profundidade conceitual e técnica.
-
-    <br /><br />
-    <strong>Formato dos módulos:</strong><br />
-    As aulas terão formatos variados — alguns em estilo vlog, outros como documentário narrativo. Haverá módulos teóricos (ex: Baudrillard, cibernética, ética da IA) e módulos práticos (ex: ComfyUI, LoRA, pointclouds, pipelines de geração). Cada módulo será independente, mas interligado a outros por referências cruzadas — uma navegação em rede, não linear.
-
-    <br /><br />
-    <strong>Interface e estética:</strong><br />
-    A identidade visual será toda inspirada em terminais antigos estilo MS-DOS (fundo preto, tipografia verde, estrutura monoespaçada), com responsividade total para mobile. A interface do site simulará um terminal onde os módulos e comandos serão acessados como se estivéssemos navegando por um sistema.
-
-    <br /><br />
-    <strong>Infraestrutura:</strong><br />
-    - Front-end: React com Tailwind (ou similar)<br />
-    - Frameworks possíveis: Next.js, Astro<br />
-    - Hospedagem: Vercel ou Netlify<br />
-    - Estilo visual: terminal hacker / retro CLI<br />
-    - Deploy leve e estático para MVP<br />
-    - Backend: nenhuma necessidade no início<br />
-    - Possível integração futura com Firebase Auth ou LMS open source
-
-    <br /><br />
-    <strong>Funcionalidades principais no MVP:</strong><br />
-    - Página inicial com prompt de entrada (simulando terminal)<br />
-    - Listagem dos módulos com títulos e descrições resumidas<br />
-    - Links para vídeos (Vimeo/YouTube não listado)<br />
-    - Estilo visual consistente com a proposta hacker/retro<br />
-    - Site leve, acessível e 100% mobile-ready<br />
-    - Possível versão PT/EN (ou legendas nos vídeos)
-
-    <br /><br />
-    <strong>Funções extras (futuro):</strong><br />
-    - Captura de e-mails<br />
-    - Sistema de acesso por token/manual<br />
-    - Área de comunidade (fórum leve ou Discord)<br />
-    - Progresso ou trilhas customizadas (se fizer sentido)
-
-    <br /><br />
-    <strong>Objetivo:</strong><br />
-    Construir uma plataforma autoral e diferenciada — estética, funcional e conceitualmente — para apresentar o curso como uma obra em si, articulando arte, código, teoria e técnica.
-
-    <br /><br />
-    <strong>Equipe:</strong><br />
-    - UX/UI: Mauro<br />
-    - Frontend: Aldry<br />
-    - Conteúdo, roteiro e direção: [Seu nome]
-  </body>
-</html>
-      }
-      h1 {
-        color: #00ff00;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Curso: Inteligência Artificial, Estética e Futuro</h1>
-    <p>Este é um projeto de curso autoral, modular, interdisciplinar...</p>
-  </body>
+    window.onload = typeWriter;
+  </script>
+</body>
 </html>
