@@ -8,10 +8,10 @@
     background-color: black;
     color: #00ff00;
     font-family: monospace;
-    padding: 1.2rem;
+    padding: 2rem;
     white-space: pre-wrap;
-    font-size: 36px;       /* MUITO maior */
-    line-height: 1.8;      /* Proporcional */
+    font-size: 18px;
+    line-height: 1.5;
     max-width: 960px;
     margin: 0 auto;
   }
@@ -23,13 +23,38 @@
 
   .cursor {
     display: inline-block;
-    width: 18px;
+    width: 10px;
     background-color: #00ff00;
     animation: blink 1s step-start 0s infinite;
   }
 
   @keyframes blink {
     50% { background-color: transparent; }
+  }
+
+  /* 📱 CELULAR: aumentar bem a fonte */
+  @media (max-width: 768px) {
+    body {
+      font-size: 30px;
+      line-height: 1.6;
+      padding: 1.5rem 1rem;
+    }
+
+    .cursor {
+      width: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      font-size: 34px;
+      line-height: 1.7;
+      padding: 1.2rem 0.8rem;
+    }
+
+    .cursor {
+      width: 16px;
+    }
   }
 </style>
 </head>
