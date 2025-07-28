@@ -4,28 +4,42 @@
   <meta charset="UTF-8" />
   <title>Projeto IA e Estética</title>
   <style>
+  body {
+    background-color: black;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 2rem;
+    white-space: pre-wrap;
+    font-size: 14px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  #terminal {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #00ff00;
+    animation: blink 1s step-start 0s infinite;
+  }
+
+  @keyframes blink {
+    50% { background-color: transparent; }
+  }
+
+  /* RESPONSIVO PARA CELULAR */
+  @media (max-width: 768px) {
     body {
-      background-color: black;
-      color: #00ff00;
-      font-family: monospace;
-      padding: 2rem;
-      white-space: pre-wrap;
-      font-size: 14px;
+      font-size: 17px;
+      line-height: 1.5;
+      padding: 1.2rem;
     }
-    #terminal {
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-    }
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      background-color: #00ff00;
-      animation: blink 1s step-start 0s infinite;
-    }
-    @keyframes blink {
-      50% { background-color: transparent; }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div id="terminal"></div>
